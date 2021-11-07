@@ -5,7 +5,7 @@ import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import kotlinx.android.synthetic.main.activity_main.*
+import come.mikedev.agecalculatorx.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -15,12 +15,17 @@ import java.util.*
  * 2021-11-7
  */
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        //        setContentView(R.layout.activity_main)
+        setContentView(view)
 
 
-        datePickerBtn.setOnClickListener { view: View ->
+        binding.datePickerBtn.setOnClickListener { view: View ->
             clickDatePicker(view)
 //            Toast.makeText(this@MainActivity, "Button works", Toast.LENGTH_LONG).show()
         }
@@ -41,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
                 val selectedDate = "$selectedDayOfMonth/${selectedMonth + 1}/$selectedYear"
                 // selectedMonth + 1 bcuz month starts from 0
-                selectedDateTv.text = selectedDate
+                binding.selectedDateTv.text = selectedDate
 
                 val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
                 val theDate = sdf.parse(selectedDate)  // check java Date()
@@ -52,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
                 val currDateInMinutes = currentDate!!.time / 60000
                 val diffInMinutes = currDateInMinutes - selectedDateInMinutes
-                selectedDateInMinutesTv.text = diffInMinutes.toString()
+                binding.selectedDateInMinutesTv.text = diffInMinutes.toString()
 
             }, year, month, day
         )
