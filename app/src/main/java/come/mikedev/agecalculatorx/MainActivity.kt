@@ -62,9 +62,12 @@ class MainActivity : AppCompatActivity() {
                 val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
                 val currDateInMinutes = currentDate!!.time / 60000
                 val diffInMinutes = currDateInMinutes - selectedDateInMinutes
+                val ageInHours = diffInMinutes/(60*24)
+                val ageInYears = diffInMinutes/(60*24*365)
 
                 binding.ageInHoursTv.text = (diffInMinutes/60).toString()
-                binding.ageInDaysTv.text = (diffInMinutes/(60*24)).toString()
+                binding.ageInDaysTv.text =  ageInHours.toString()
+                binding.yourAgeTv.text = "You are $ageInYears years old"
 
             }, year, month, day
         )

@@ -38,16 +38,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/vlGray"
         android:layout_marginTop="60dp"
+        android:background="@color/vlGray"
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/datePickerBtn">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:paddingHorizontal="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -72,34 +72,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:layout_margin="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:text="Age in Days"
-                android:textColor="@color/lightGray"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/ageInDaysTv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="200dp"
-                android:text="_"
-                android:textColor="#844046"
-                android:textSize="24sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:paddingHorizontal="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -124,13 +98,40 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:paddingHorizontal="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Age in Days"
+                android:textColor="@color/lightGray"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ageInDaysTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="200dp"
+                android:text="_"
+                android:textColor="#844046"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/yourAgeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="You are x years old"
+                android:text="_"
                 android:textSize="20sp" />
         </RelativeLayout>
 
