@@ -1,81 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:background="@color/backgroundColor"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Calculate Your"
+        android:layout_marginTop="28dp"
+        android:text="Age Calculator Pro"
         android:textColor="@color/textColor"
         android:textSize="24sp"
-        android:textStyle="bold" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Age in minutes"
-        android:textColor="@color/textColor"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/datePickerBtn"
-        android:layout_width="355dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:text="Select date"
-      />
-
-    <TextView
-        android:id="@+id/selectedDateTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#844046"
-        android:layout_marginTop="20sp"
-        android:textSize="20sp"
-        android:text="x"
-        />
-
-    <TextView
-        android:id="@+id/xxxxxx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/lightGray"
-        android:layout_marginTop="20sp"
-        android:textSize="20sp"
-        android:text="Selected Date"
-        />
-
-    <TextView
-        android:id="@+id/selectedDateInMinutesTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#844046"
-        android:layout_marginTop="20sp"
-        android:textSize="35sp"
-        android:text="x"
-        />
-
-    <TextView
-        android:id="@+id/ccc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/lightGray"
+        android:layout_marginTop="104dp"
+        android:text="Select A Date"
         android:textSize="18sp"
-        android:text="Age in minutes"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/vlGray"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/datePickerBtn">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="Selected Date"
+                android:textColor="@color/lightGray"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/selectedDateTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="200dp"
+                android:text="_"
+                android:textColor="#844046"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Age in Days"
+                android:textColor="@color/lightGray"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ageInDaysTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="200dp"
+                android:text="_"
+                android:textColor="#844046"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Age in Hours"
+                android:textColor="@color/lightGray"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ageInHoursTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="200dp"
+                android:text="_"
+                android:textColor="#844046"
+                android:textSize="24sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="You are x years old"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

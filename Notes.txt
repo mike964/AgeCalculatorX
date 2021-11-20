@@ -1,6 +1,6 @@
 
 2021-10-4 -----------
-Add view binding
+ - Add view binding                          			#DONE                       
 Add age in hours - days - month
 
 show percentage how much you have passed
@@ -8,3 +8,16 @@ how much left
 how much would you like to live
 how much average in your country
 
+2021-11-7
+Add how much would u like to live input and checkboxes 60, 70, 80
+
+2021-11-
+
+- Add you have lived ... so far.
+- You are x years old
+- If selected date is selected ; show second question
+ 'How much would u like to live
+- when second question is answered move to another activity and 
+- show how many years, months days, left 
+- and percentage
+- you have passed 20 percent of your life

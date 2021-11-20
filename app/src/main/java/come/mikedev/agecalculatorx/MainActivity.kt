@@ -26,38 +26,45 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.datePickerBtn.setOnClickListener { view: View ->
-            clickDatePicker(view)
+            onDatePickerClick(view)
 //            Toast.makeText(this@MainActivity, "Button works", Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun clickDatePicker(view: View) {
+    private fun onDatePickerClick(view: View) {
         val myCalendar = Calendar.getInstance()
         val year = myCalendar.get(Calendar.YEAR)
         val month = myCalendar.get(Calendar.MONTH)
         val day = myCalendar.get(Calendar.DAY_OF_MONTH)
 
-        Log.d("CALENDAR", "$year | $month | $day" )
+        Log.d("CALENDAR", "$year | $month | $day" )  // output: 2021 | 10 | 20
 
         val dpd = DatePickerDialog(
             this,
             DatePickerDialog.OnDateSetListener { view, selectedYear, selectedMonth, selectedDayOfMonth ->
 //                Toast.makeText(this@MainActivity, "Date picker works!", Toast.LENGTH_LONG).show()
 
-                val selectedDate = "$selectedDayOfMonth/${selectedMonth + 1}/$selectedYear"
+                val selectedDateString = "$selectedDayOfMonth/${selectedMonth + 1}/$selectedYear"
                 // selectedMonth + 1 bcuz month starts from 0
-                binding.selectedDateTv.text = selectedDate
+                binding.selectedDateTv.text = selectedDateString
 
                 val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
-                val theDate = sdf.parse(selectedDate)  // check java Date()
+                val selectedDate = sdf.parse(selectedDateString)  // check java Date()
 
-                // divide by 1000 to get seconds - divide by 60000 to get minutes
-                val selectedDateInMinutes = theDate!!.time / 60000   // except null !!
+                Log.d("TAG-11", "_selectedDate: $selectedDate")
+                // output: Mon Nov 01 00:00:00 GMT+03:00 2021
+                Log.d("TAG-12", "${selectedDate!!.time}" )
+                // output: 1636146000000
+
+                // divide by 1000 to get seconds - divide by 60 to get minutes
+                val selectedDateInMinutes = selectedDate!!.time / 60000   // except null !!
 
                 val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
                 val currDateInMinutes = currentDate!!.time / 60000
                 val diffInMinutes = currDateInMinutes - selectedDateInMinutes
-                binding.selectedDateInMinutesTv.text = diffInMinutes.toString()
+
+                binding.ageInHoursTv.text = (diffInMinutes/60).toString()
+                binding.ageInDaysTv.text = (diffInMinutes/(60*24)).toString()
 
             }, year, month, day
         )
